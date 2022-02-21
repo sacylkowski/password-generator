@@ -3,6 +3,8 @@ var upperCaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"
 var lowerCaseArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numericValuesArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var specialCharactersArray = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
+var characters = []
+var passwordLength = []
 
 // ADD GeneratePassword function
 function generatePassword() {
@@ -17,13 +19,15 @@ function generatePassword() {
   if (lengthCriteria >= 8 && lengthCriteria <= 128) {
     window.alert("Password will be " + lengthCriteria + " characters long.");
     lengthCriteria = parseInt(lengthCriteria);
+    passwordLength = passwordLength.concat(lengthCriteria);
   }
 
   var upperCase = window.prompt("Would you like to include uppercase letters?");
 
   if (upperCase === "yes" || upperCase === "Yes" || upperCase === "YES") {
     window.alert("Password will have uppercase letters.");
-    // var upperCaseArray = [Math.floor(Math.random() * upperCaseArray.length)];
+    characters = characters.concat(upperCaseArray)
+
   }
   if (upperCase === "no" || upperCase === "No" || upperCase === "NO") {
     window.alert("Password will not have uppercase letters.")
@@ -32,39 +36,40 @@ function generatePassword() {
   var lowerCase = window.prompt("Would you like to include lowercase letters?")
 
   if (lowerCase === "yes" || lowerCase === "Yes" || lowerCase === "YES") {
-    console.log("Password will have lowercase letters.")
+    window.alert("Password will have lowercase letters.")
+    characters = characters.concat(lowerCaseArray)
   }
   if (lowerCase === "no" || lowerCase === "No" || lowerCase === "NO") {
-    console.log("Password will not have lowercase letters.")
+    window.alert("Password will not have lowercase letters.")
   }
 
   var numericValues = window.prompt("Would you like to include numeric values?")
 
   if (numericValues === "yes" || numericValues === "Yes" || numericValues === "YES") {
-    console.log("Password will have numbers.")
+    window.alert("Password will have numbers.")
+    characters = characters.concat(numericValuesArray)
   }
   if (numericValues === "no" || numericValues === "No" || numericValues === "NO") {
-    console.log("Password will not have numbers.")
+    window.alert("Password will not have numbers.")
   }
 
   var specialCharacters = window.prompt("Would you like to include special characters?")
 
   if (specialCharacters === "yes" || specialCharacters === "Yes" || specialCharacters === "YES") {
     window.alert("Password will have special characters.")
-    // return specialCharactersArray[Math.floor(Math.random() * specialCharactersArray.length)];
+    characters = characters.concat(specialCharactersArray)
   }
   if (specialCharacters === "no" || specialCharacters === "No" || specialCharacters === "NO") {
     window.alert("Password will not have special characters.")
 
   }
-
-  var password 
+  
+  for (var i = 0; i < passwordLength; i++) {
+    // var characters = [Math.floor(Math.random() * characters.length)];
+    console.log(characters.join(''));
+    return characters;
+  }
 }
-
-
-
-// return "Password";
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
