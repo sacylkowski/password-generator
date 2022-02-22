@@ -4,7 +4,6 @@ var lowerCaseArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"
 var numericValuesArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var specialCharactersArray = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 var characters = []
-var passwordLength = []
 
 // ADD GeneratePassword function
 function generatePassword() {
@@ -19,7 +18,6 @@ function generatePassword() {
   if (lengthCriteria >= 8 && lengthCriteria <= 128) {
     window.alert("Password will be " + lengthCriteria + " characters long.");
     lengthCriteria = parseInt(lengthCriteria);
-    passwordLength = passwordLength.concat(lengthCriteria);
   }
 
   var upperCase = window.prompt("Would you like to include uppercase letters?");
@@ -63,10 +61,10 @@ function generatePassword() {
     window.alert("Password will not have special characters.")
 
   }
-  
-  for (var i = 0; i < passwordLength; i++) {
-    // var characters = [Math.floor(Math.random() * characters.length)];
+
+  for (var i = 0; i < lengthCriteria.length; i++) {
     console.log(characters.join(''));
+    // var characters = characters[Math.floor(Math.random() * characters.length)];
     return characters;
   }
 }
