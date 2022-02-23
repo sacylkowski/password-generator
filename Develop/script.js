@@ -3,10 +3,11 @@ var upperCaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"
 var lowerCaseArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numericValuesArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var specialCharactersArray = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
-var characters = []
 
 // ADD GeneratePassword function
 function generatePassword() {
+
+  var characters = []
 
   var lengthCriteria = (Number(prompt("How many characters would you like for your password?")));
 
@@ -62,14 +63,15 @@ function generatePassword() {
 
   }
 
-  console.log(characters.join(''));
+
+  var passwordText = ""
 
   for (var i = 0; i < lengthCriteria; i++) {
-    var passwordText = characters[Math.floor(Math.random() * characters.length)];
-  
+    passwordText += characters[Math.floor(Math.random() * characters.length)];
+
   }
 
-  return characters;
+  return passwordText;
 }
 
 // Get references to the #generate element
