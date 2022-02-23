@@ -62,11 +62,14 @@ function generatePassword() {
 
   }
 
-  for (var i = 0; i < lengthCriteria.length; i++) {
-    console.log(characters.join(''));
-    // var characters = characters[Math.floor(Math.random() * characters.length)];
-    return characters;
+  console.log(characters.join(''));
+
+  for (var i = 0; i < lengthCriteria; i++) {
+    var passwordText = characters[Math.floor(Math.random() * characters.length)];
+  
   }
+
+  return characters;
 }
 
 // Get references to the #generate element
