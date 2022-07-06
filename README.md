@@ -1,4 +1,4 @@
-# Password Generator Starter Code
+# Password Generator
 
  <img src="Develop/Assets/Password-picture.png" alt="password generator example" width="1206" />
 
